@@ -5,11 +5,11 @@ namespace ShirtShooping.Web.Utils
 {
     public static class HttpClientExtensios
     {
-        private static MediaTypeHeaderValue contentType 
+        private static MediaTypeHeaderValue contentType
             = new MediaTypeHeaderValue("application/json");
         public static async Task<T> ReadContentAs<T>(this HttpResponseMessage response)
         {
-            if (response.IsSuccessStatusCode) throw new ArgumentException($"Something went wrong calling the API: " + $"{response.ReasonPhrase}");
+            if (!response.IsSuccessStatusCode) throw new ArgumentException($"Something went wrong calling the API: " + $"{response.ReasonPhrase}");
             var dataAsString = await response.Content.ReadAsStringAsync().ConfigureAwait(false);
             return JsonSerializer.Deserialize<T>(dataAsString,
                                                  new JsonSerializerOptions 
