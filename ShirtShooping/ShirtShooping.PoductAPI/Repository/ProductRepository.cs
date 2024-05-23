@@ -17,6 +17,7 @@ namespace ShirtShooping.PoductAPI.Repository
             _context = context;
             _mapper = mapper;
         }
+
         public async Task<IEnumerable<ProductVO>> FindAll()
         {
             List<Product> products = await _context.Products.ToListAsync();
@@ -25,7 +26,9 @@ namespace ShirtShooping.PoductAPI.Repository
 
         public async Task<ProductVO> FindById(long id)
         {
-            Product product = await _context.Products.Where(p => p.Id == id).FirstOrDefaultAsync();
+            Product product =
+                await _context.Products.Where(p => p.Id == id)
+                    .FirstOrDefaultAsync();
             return _mapper.Map<ProductVO>(product);
         }
 
@@ -48,8 +51,9 @@ namespace ShirtShooping.PoductAPI.Repository
         {
             try
             {
-                Product product = await _context.Products.Where(p => p.Id == id).
-                    FirstOrDefaultAsync();
+                Product product =
+                    await _context.Products.Where(p => p.Id == id)
+                        .FirstOrDefaultAsync();
                 if (product == null) return false;
                 _context.Products.Remove(product);
                 await _context.SaveChangesAsync();
@@ -57,7 +61,6 @@ namespace ShirtShooping.PoductAPI.Repository
             }
             catch (Exception)
             {
-
                 return false;
             }
         }

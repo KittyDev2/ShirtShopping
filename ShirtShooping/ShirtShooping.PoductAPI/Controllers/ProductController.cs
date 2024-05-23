@@ -4,7 +4,7 @@ using ShirtShooping.PoductAPI.Data.ValueObjects;
 using ShirtShooping.PoductAPI.Repository;
 
 namespace ShirtShooping.PoductAPI.Controllers
-{
+    {
     [Route("api/v1/[controller]")]
     [ApiController]
     public class ProductController : ControllerBase
@@ -13,12 +13,12 @@ namespace ShirtShooping.PoductAPI.Controllers
 
         public ProductController(IProductRepository repository)
         {
-            _repository = repository ?? throw new 
+            _repository = repository ?? throw new
                 ArgumentNullException(nameof(repository));
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ProductVO>>> FindAll() 
+        public async Task<ActionResult<IEnumerable<ProductVO>>> FindAll()
         {
             var products = await _repository.FindAll();
             return Ok(products);
@@ -33,15 +33,15 @@ namespace ShirtShooping.PoductAPI.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult<ProductVO>> Create([FromBody]ProductVO vo)
+        public async Task<ActionResult<ProductVO>> Create([FromBody] ProductVO vo)
         {
             if (vo == null) return BadRequest();
             var product = await _repository.Create(vo);
             return Ok(product);
         }
 
-        [HttpPut("{id}")]
-        public async Task<ActionResult<ProductVO>> Update([FromBody]ProductVO vo)
+        [HttpPut]
+        public async Task<ActionResult<ProductVO>> Update([FromBody] ProductVO vo)
         {
             if (vo == null) return BadRequest();
             var product = await _repository.Update(vo);
@@ -49,7 +49,7 @@ namespace ShirtShooping.PoductAPI.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(long id) 
+        public async Task<ActionResult> Delete(long id)
         {
             var status = await _repository.Delete(id);
             if (!status) return BadRequest();
