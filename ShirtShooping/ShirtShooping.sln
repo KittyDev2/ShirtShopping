@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShirtShooping.Web", "ShirtS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShirtShooping.PoductAPI", "ShirtShooping.PoductAPI\ShirtShooping.PoductAPI.csproj", "{4919AAB9-B378-4FC1-B533-FDBA4B3DC13F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShirtShooping.IdentityServer", "ShirtShooping.IdentityServer\ShirtShooping.IdentityServer.csproj", "{744F9B67-B6B9-4051-9F10-734A251DBAFE}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,10 +25,6 @@ Global
 		{4919AAB9-B378-4FC1-B533-FDBA4B3DC13F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4919AAB9-B378-4FC1-B533-FDBA4B3DC13F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4919AAB9-B378-4FC1-B533-FDBA4B3DC13F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{744F9B67-B6B9-4051-9F10-734A251DBAFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{744F9B67-B6B9-4051-9F10-734A251DBAFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{744F9B67-B6B9-4051-9F10-734A251DBAFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{744F9B67-B6B9-4051-9F10-734A251DBAFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,7 +32,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{DEA35E42-BE96-4B76-B465-85799FB2B545} = {CF611E13-1C2B-4B9F-986A-40BFADA00F9E}
 		{4919AAB9-B378-4FC1-B533-FDBA4B3DC13F} = {EF42E214-90D9-4D30-95C7-A6224EFCC425}
-		{744F9B67-B6B9-4051-9F10-734A251DBAFE} = {EF42E214-90D9-4D30-95C7-A6224EFCC425}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {08E6E80A-BDCE-43EC-9BDA-B329E6A476DD}
