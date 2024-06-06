@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using ShirtShooping.Web.Models;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Authorization;
 
 namespace ShirtShooping.Web.Controllers
 {
@@ -27,6 +28,17 @@ namespace ShirtShooping.Web.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        
+        [Authorize]
+        public IActionResult Login()
+        {
+            return RedirectToAction(nameof(Index));
+        }
+        
+        public IActionResult Logout()
+        {
+            return SignOut("Cookies", "oidc");
         }
     }
 }
