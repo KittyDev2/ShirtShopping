@@ -1,9 +1,11 @@
+using Duende.IdentityServer.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using ShirtShooping.IdentityServer.Configuration;
 using ShirtShooping.IdentityServer.Initializer;
 using ShirtShooping.IdentityServer.Model;
 using ShirtShooping.IdentityServer.Model.Context;
+using ShirtShooping.IdentityServer.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +32,7 @@ var builderServices = builder.Services.AddIdentityServer(options =>
     .AddAspNetIdentity<ApplicationUser>();
 
 builder.Services.AddScoped<IDbInitializer, DbInitializer>();
+builder.Services.AddScoped<IProfileService, ProfileService>();
 
 builder.Services.AddControllersWithViews();
 
